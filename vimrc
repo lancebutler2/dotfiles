@@ -10,7 +10,7 @@ if filereadable(expand("~/.vimrc.convenience"))
     source ~/.vimrc.convenience
 endif
 
-syntax on
+syntax enable
 filetype plugin indent on
 set background=dark
 " scriptencoding utf-8

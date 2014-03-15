@@ -1,0 +1,19 @@
+set nocompatible
+set background=dark
+
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+" required
+Bundle 'gmarik/vundle'
+Bundle 'L9'
+Bundle 'tpope/vim-repeat'
+
+" github
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'bling/vim-airline'
+Bundle 'StanAngeloff/php.vim'
+
+" vim-scripts
+Bundle 'FuzzyFinder'

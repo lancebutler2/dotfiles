@@ -113,9 +113,9 @@ if ${use_color} ; then
       PS1="\[$BPurple\]\u@\H \t \[$BICyan\]|\w| \[$BIRed\]\$ \[$BIWhite\]"
   fi
 
-  CLICOLOR="YES";    
+  CLICOLOR="YES";
   export CLICOLOR
-  LSCOLORS="ExGxFxdxCxDxDxhbadExEx";    
+  LSCOLORS="ExGxFxdxCxDxDxhbadExEx";
   export LSCOLORS
   #alias ls='ls --color=auto'
   #alias grep='grep --colour=auto'
@@ -244,3 +244,5 @@ PATH=$PATH:/root/.gem/ruby/2.1.0/bin;
 export GEM_HOME=/home/lance/.gem/ruby/2.0.0;
 export EDITOR=/usr/bin/vim;
 export PATH;
+
+# . ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh

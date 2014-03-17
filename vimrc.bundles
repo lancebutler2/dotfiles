@@ -15,6 +15,7 @@ Bundle 'bling/vim-airline'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'Lokaltog/powerline'
+Bundle 'tpope/vim-fugitive'
 " Bundle 'altercation/vim-colors-solarized'
 
 " vim-scripts

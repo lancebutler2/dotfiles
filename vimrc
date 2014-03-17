@@ -65,8 +65,8 @@ set splitright		"  Puts new vsplit windows to the right of the current
 set splitbelow		" Puts new split windows to the bottom of the current
 set pastetoggle=<F12>	" pastetoggle (sane indentation on pastes)
 set viewoptions=folds,options,cursor,unix,slash	" Better Unix / Windows compatibility
-set virtualedit=onemore	" Allow for cursor beyond last character
 set history=1000	" Store a ton of history (default is 20)
+set virtualedit=onemore	" Allow for cursor beyond last character
 set hidden		" Allow buffer switching without saving
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
 set linespace=4		" set linespacing for gvim
@@ -137,7 +137,7 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 nnoremap s <Plug>(easymotion-s)
 
 " redraw screen and remove search underlines/highlighting
-nnoremap <C-l> :nohl<cr><C-l>
+nnoremap <leader><leader>l :nohl<cr><C-l>
 
 " find word under cursor in visual mode
 vnoremap <silent> * :call VisualSelection('f')<cr>

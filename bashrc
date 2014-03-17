@@ -110,7 +110,7 @@ if ${use_color} ; then
       PS1='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
   else
       #PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
-      PS1="\[$BPurple\]\u@\H \t \[$BICyan\]|\w| \[$BIRed\]\$ \[$BIWhite\]"
+      PS1="\[$BPurple\]\u@\H \@ \[$BICyan\][\w] \[$BIRed\]\$ \[$BIWhite\]"
   fi
 
   CLICOLOR="YES";

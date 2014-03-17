@@ -18,23 +18,22 @@ set encoding=utf-8      " necessary to show unicode glyphs
 set t_Co=256		" give me colors!
 " Allow color schemes to do bright colors without forcing bold.
 if &t_Co == 8 && $TERM !~# '^linux'
-	set t_Co=16
+    set t_Co=16
 endif
 set backspace=indent,eol,start	" allow backspacing over everything in insert mode
-set expandtab		" spaces are better than tab character
-set smarttab		" spaces are better than tab character
-                        " test characters
 set tabstop=8		" keep tabstop at 8 to appear correct for printing
 set softtabstop=4	" 4 spaces for tab during coding
 set shiftwidth=4	" 4 spaces for tab during coding
 set shiftround          " use multiple of tab when shifting
+set expandtab		" spaces are better than tab character
+set smarttab		" spaces are better than tab character
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set noshowmode		" showmode
 set laststatus=2        " always show status line
 set incsearch		" do incremental searching
-set mouse=a		" enable mouse for virtual terminals
+set mouse=a		" enable mouse for all modes
 set mousehide		" hide mouse while typing
 set wrapscan		" set wrap searches
 set ignorecase		" case insensitive searching
@@ -59,13 +58,16 @@ set viewoptions=folds,options,cursor,unix,slash	" Better Unix / Windows compatib
 set virtualedit=onemore	" Allow for cursor beyond last character
 set history=1000	" Store a ton of history (default is 20)
 set hidden		" Allow buffer switching without saving
-" set nohidden		" When I close a tab, remove the buffer
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
 set linespace=4		" set linespacing for gvim
 set hlsearch            " hilight things that we find with search
 set guioptions-=T	" remove toolbar for gui
 set guioptions-=r	" remove right hand scroll bar for gui
 set guioptions-=L       " remove left hand scroll bar for gui
+set confirm             " instead of failing command, raise dialog asking to save changed files
+set visualbell          " use visual bell instead of beeping when doing something wrong
+set notimeout ttimeout ttimeoutlen=200  " quickly time out on keycodes, but never time out on mappings
+" set pastetoggle=<F11>   " use <F11> to toggle between 'paste' and 'nopaste'
 
 " MAPS
 let mapleader = ","
@@ -78,13 +80,9 @@ nnoremap L $
 nnoremap J gT
 nnoremap K gt
 " nnoremap <F5> :NERDTreeToggle<cr>
-" nnoremap <silent> <c-h> :wincmd h<cr>
 nnoremap <C-h> <C-w>h
-" nnoremap <silent> <c-j> :wincmd j<cr>
 nnoremap <C-j> <C-w>j
-" nnoremap <silent> <c-k> :wincmd k<cr>
 nnoremap <C-k> <C-w>k
-" nnoremap <silent> <c-l> :wincmd l<cr>
 nnoremap <C-l> <C-w>l
 nnoremap <silent> <F6> :set number!<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -95,15 +93,11 @@ nnoremap <leader>d :FufDirWithCurrentBufferDir<cr>
 nnoremap <leader>b :FufBuffer<cr>
 nnoremap <leader>w :call Wipeout()<Esc>
 nnoremap s <Plug>(easymotion-s)
-nnoremap <leader>h :H<cr>
-" set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
+nnoremap <C-l> :nohl<cr><C-l>
 let g:airline_powerline_fonts=1
 
 " AUTOCOMMANDS
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif " remove any trailing whitespace that is in the file
-
-" Remove search results
-command! H let @/=""
 
 " GLOBAL MAPS
 let g:fuf_maxMenuWidth=950

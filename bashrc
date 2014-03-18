@@ -130,6 +130,9 @@ fi
 
 
 
+## Copy SSH RSA passowrd to xclip
+alias xcliprsa='xclip -sel clip < ~/.ssh/id_rsa.pub'
+
 ## Make Bash error tolerant ## {{{
 alias :q=' exit'
 alias :Q=' exit'

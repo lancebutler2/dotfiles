@@ -78,7 +78,9 @@ set autoread            " set to auto read when a file is changed from the outsi
 if has("gui_running")
     set guioptions-=T	" remove toolbar for gui
     set guioptions-=r	" remove right hand scroll bar for gui
-    set guioptions-=L       " remove left hand scroll bar for gui
+    set guioptions-=L   " remove left hand scroll bar for gui
+    set guioptions-=m   " remove menu bar for gui
+    set guifont=Consolas\ 13
 endif
 " set pastetoggle=<F11>   " use <F11> to toggle between 'paste' and 'nopaste'
 

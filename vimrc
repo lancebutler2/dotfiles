@@ -30,7 +30,7 @@ if &t_Co == 8 && $TERM !~# '^linux'
     set t_Co=16
 endif
 set backspace=indent,eol,start	" allow backspacing over everything in insert mode
-set tabstop=8		" keep tabstop at 8 to appear correct for printing
+set tabstop=4		" keep tabstop at 8 to appear correct for printing
 set softtabstop=4	" 4 spaces for tab during coding
 set shiftwidth=4	" 4 spaces for tab during coding
 set shiftround          " use multiple of tab when shifting
@@ -110,10 +110,10 @@ nnoremap K gt
 " nnoremap <F5> :NERDTreeToggle<cr>
 
 " quickly switch windows
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
 
 "toggle numbers!
 nnoremap <silent> <F6> :set number!<cr>
@@ -144,10 +144,10 @@ vnoremap <silent> * :call VisualSelection('f')<cr>
 vnoremap <silent> # :call VisualSelection('b')<cr>
 
 " quickly move lines up/down (awesome)
-nmap <C-S-j> mz:m+<cr>`z
-nmap <C-S-k> mz:m-2<cr>`z
-vmap <C-S-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <C-S-k> :m'<-2<cr>`>my`<mzgv`yo`z
+nmap <C-j> mz:m+<cr>`z
+nmap <C-k> mz:m-2<cr>`z
+vmap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 " spell checking toggle
 map <leader>ss :setlocal spell!<cr>

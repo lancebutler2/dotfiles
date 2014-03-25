@@ -33,16 +33,16 @@ set backspace=indent,eol,start	" allow backspacing over everything in insert mod
 set tabstop=4		" keep tabstop at 8 to appear correct for printing
 set softtabstop=4	" 4 spaces for tab during coding
 set shiftwidth=4	" 4 spaces for tab during coding
-set shiftround          " use multiple of tab when shifting
+set shiftround      " use multiple of tab when shifting
 set expandtab		" spaces are better than tab character
 set smarttab		" spaces are better than tab character
 set history=50		" keep 50 lines of command line history
-set showcmd		" display incomplete commands
-set ruler		" show the cursor position all the time
+set showcmd		    " display incomplete commands
+set ruler		    " show the cursor position all the time
 set noshowmode		" show mode
-set laststatus=2        " always show status line
+set laststatus=2    " always show status line
 set incsearch		" do incremental searching
-set mouse=a		" enable mouse for all modes
+set mouse=a		    " enable mouse for all modes
 set mousehide		" hide mouse while typing
 set wrapscan		" set wrap searches
 set ignorecase		" case insensitive searching
@@ -50,11 +50,11 @@ set smartcase		" case sensitive when uc present
 set wildmenu		" display wild menu instead of just completing it
 set wildmode=list:longest,full	" Command <Tab> completion, list matches, then longest common part, then all.
 set scrolljump=5	" Lines to scroll when cursor leaves screen
-set scrolloff=10    	" Minimum lines to keep above and below cursor
-set nowrap		" set wrap for all files
-set number		" set numbers
-set numberwidth=5       " we are good up to 99999 lines
-set backup		" keep a backup file
+set scrolloff=10   	" Minimum lines to keep above and below cursor
+set nowrap		    " set wrap for all files
+set number		    " set numbers
+set numberwidth=5   " we are good up to 99999 lines
+set backup		    " keep a backup file
 set backupdir=~/.vim/backup " backup dir
 set directory=~/.vim/tmp    " directory?
 set autoindent		" autoindent next line to match above one
@@ -63,18 +63,18 @@ set nolist		" start out by setting nolist, do not show special tab/space charact
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.	" Highlight problematic whitespace
 set splitright		"  Puts new vsplit windows to the right of the current
 set splitbelow		" Puts new split windows to the bottom of the current
-set pastetoggle=<F12>	" pastetoggle (sane indentation on pastes)
+set pastetoggle=<F12>   " pastetoggle (sane indentation on pastes)
 set viewoptions=folds,options,cursor,unix,slash	" Better Unix / Windows compatibility
 set history=1000	" Store a ton of history (default is 20)
 set virtualedit=onemore	" Allow for cursor beyond last character
-set hidden		" Allow buffer switching without saving
+set hidden		    " Allow buffer switching without saving
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
 set linespace=4		" set linespacing for gvim
-set hlsearch            " hilight things that we find with search
-set confirm             " instead of failing command, raise dialog asking to save changed files
-set novisualbell          " flashing sucks! don't use visual bell instead of beeping when doing something wrong
+set hlsearch        " hilight things that we find with search
+set confirm         " instead of failing command, raise dialog asking to save changed files
+set novisualbell    " flashing sucks! don't use visual bell instead of beeping when doing something wrong
 set notimeout ttimeout ttimeoutlen=200  " quickly time out on keycodes, but never time out on mappings
-set autoread            " set to auto read when a file is changed from the outside
+set autoread        " set to auto read when a file is changed from the outside
 if has("gui_running")
     set guioptions-=T	" remove toolbar for gui
     set guioptions-=r	" remove right hand scroll bar for gui

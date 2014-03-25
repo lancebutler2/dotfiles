@@ -165,7 +165,7 @@ map <leader>pp :setlocal paste!<cr>
 let g:airline_powerline_fonts=1
 
 " toggle relative numbers
-nnoremap <leader>nn :set rnu!<cr>
+nnoremap <leader>rn :set rnu!<cr>
 
 """"""""""""""""""""""""""""""""""""""""
 " AUTOCOMMANDS

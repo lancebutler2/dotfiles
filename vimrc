@@ -167,11 +167,17 @@ let g:airline_powerline_fonts=1
 " toggle relative numbers
 nnoremap <leader>rn :set rnu!<cr>
 
+" toggle NerdTree
+nnoremap <silent><F5> :NERDTreeToggle<cr>
+
 """"""""""""""""""""""""""""""""""""""""
 " AUTOCOMMANDS
 """"""""""""""""""""""""""""""""""""""""
 " remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+
+" setup syntax for wordpress?
+autocmd BufEnter *.php :set syn=wordpress
 
 """""""""""""""""""""""""""""""""""""""
 " GLOBAL MAPS

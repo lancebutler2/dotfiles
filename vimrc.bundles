@@ -16,7 +16,12 @@ Bundle 'StanAngeloff/php.vim'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'Lokaltog/powerline'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/nerdtree'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'JulesWang/css.vim'
+Bundle 'kloppster/Wordpress-Vim-Syntax'
 " Bundle 'altercation/vim-colors-solarized'
 
 " vim-scripts

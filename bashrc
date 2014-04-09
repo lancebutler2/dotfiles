@@ -155,7 +155,7 @@ alias cls=' echo -ne "\033c"'       # clear screen for real (it does not work in
 # }}}
 
 ## ls ## {{{
-alias ls='ls -hF --color=auto'
+alias ls='ls --group-directories-first -hF --color=auto'
 alias lr='ls -R'                    # recursive ls
 alias ll='ls -l'
 alias la='ll -A'

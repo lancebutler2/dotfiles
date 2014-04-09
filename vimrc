@@ -185,7 +185,7 @@ autocmd BufEnter *.php :set syn=wordpress
 let g:fuf_maxMenuWidth=950
 let g:airline#extensions#tabline#enabled=1
 let g:Powerline_symbols = 'fancy'
-" let g:user_emmet_leader_key='<C-Z>'
+let g:user_emmet_leader_key= '<C-Y>'
 
 """""""""""""""""""""""""""""""""""""""
 " COLOR SCHEME

@@ -170,11 +170,11 @@ alias lm='la | more'
 
 function extract()
 {
-     if [ -f $1 ] ; then
-         case $1 in
+    if [ -f $1 ] ; then
+        case $1 in
             *.tar.bz2)
-                tar xvjf $1
-                ;;
+            tar xvjf $1
+            ;;
             *.tar.gz)
                 tar xvzf $1
                 ;;
@@ -235,7 +235,7 @@ alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rns \$(/
 # }}}
 
 # custom aliases
-alias grooveshark="sudo spotify-to-mp3" #shorten spotify-to-mp3 command and remove hyphens
+alias grooveshark="spotify-to-mp3" #shorten spotify-to-mp3 command and remove hyphens
 
 PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH";
 PATH=$PATH:/usr/bin/node;

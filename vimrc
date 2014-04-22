@@ -69,7 +69,7 @@ set history=1000	" Store a ton of history (default is 20)
 set virtualedit=onemore	" Allow for cursor beyond last character
 set hidden		    " Allow buffer switching without saving
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
-set linespace=4		" set linespacing for gvim
+set linespace=0		" set linespacing for gvim
 set hlsearch        " hilight things that we find with search
 set confirm         " instead of failing command, raise dialog asking to save changed files
 set novisualbell    " flashing sucks! don't use visual bell instead of beeping when doing something wrong
@@ -186,6 +186,8 @@ let g:fuf_maxMenuWidth=950
 let g:airline#extensions#tabline#enabled=1
 let g:Powerline_symbols = 'fancy'
 let g:user_emmet_leader_key= '<C-Y>'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
 """""""""""""""""""""""""""""""""""""""
 " COLOR SCHEME

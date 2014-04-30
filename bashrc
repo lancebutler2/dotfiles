@@ -241,10 +241,11 @@ PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH";
 PATH=$PATH:/usr/bin/node;
 PATH=$PATH:/usr/bin/npm;
 PATH=$PATH:$HOME/bin;
-PATH=$PATH:$HOME/SoundWireServer;
-PATH=$PATH:/home/lance/.gem/ruby/2.0.0/bin;
+#PATH=$PATH:/home/lance/.gem/ruby/2.0.0/bin;
+PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin;
 PATH=$PATH:/root/.gem/ruby/2.1.0/bin;
-export GEM_HOME=/home/lance/.gem/ruby/2.0.0;
+#export GEM_HOME=/home/lance/.gem/ruby/2.0.0;
+export GEM_HOME=$HOME/.gem/ruby/2.0.0;
 export EDITOR=/usr/bin/vim;
 export PATH;
 

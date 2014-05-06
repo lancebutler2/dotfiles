@@ -237,6 +237,9 @@ function extract()
 # custom aliases
 alias grooveshark="spotify-to-mp3" #shorten spotify-to-mp3 command and remove hyphens
 
+# alias for betty
+alias betty="~/Build/betty/main.rb"
+
 PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH";
 PATH=$PATH:/usr/bin/node;
 PATH=$PATH:/usr/bin/npm;

@@ -234,6 +234,9 @@ function extract()
 #alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rns \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
 # }}}
 
+# who can remember ncmpcpp
+alias musica="ncmpcpp"
+
 # custom aliases
 alias grooveshark="spotify-to-mp3" #shorten spotify-to-mp3 command and remove hyphens
 
@@ -244,6 +247,7 @@ PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH";
 PATH=$PATH:/usr/bin/node;
 PATH=$PATH:/usr/bin/npm;
 PATH=$PATH:$HOME/bin;
+PATH=$PATH:$HOME/cmus/bin;
 #PATH=$PATH:/home/lance/.gem/ruby/2.0.0/bin;
 PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin;
 PATH=$PATH:/root/.gem/ruby/2.1.0/bin;

@@ -26,6 +26,7 @@ Bundle 'othree/vim-autocomplpop'
 Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'mattn/emmet-vim'
 " Bundle 'altercation/vim-colors-solarized'
+Bundle 'shawncplus/phpcomplete.vim'
 
 " vim-scripts
 Bundle 'FuzzyFinder'

@@ -170,6 +170,9 @@ nnoremap <leader>rn :set rnu!<cr>
 " toggle NerdTree
 nnoremap <silent><F5> :NERDTreeToggle<cr>
 
+" Wordpress Codex Search
+nnoremap <leader>co :Wcodexsearch<CR>
+
 """"""""""""""""""""""""""""""""""""""""
 " AUTOCOMMANDS
 """"""""""""""""""""""""""""""""""""""""
@@ -188,6 +191,19 @@ let g:Powerline_symbols = 'fancy'
 let g:user_emmet_leader_key= '<C-Y>'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<C-e>"
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" PHP.vim
+" g:php_syntax_extensions_enabled
+" b:php_syntax_extensions_enabled
 
 """""""""""""""""""""""""""""""""""""""
 " COLOR SCHEME

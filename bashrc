@@ -128,8 +128,6 @@ else
   fi
 fi
 
-
-
 ## Copy SSH RSA passowrd to xclip
 alias xcliprsa='xclip -sel clip < ~/.ssh/id_rsa.pub'
 
@@ -243,6 +241,9 @@ alias grooveshark="spotify-to-mp3" #shorten spotify-to-mp3 command and remove hy
 # alias for betty
 alias betty="~/Build/betty/main.rb"
 
+# Source Files
+source /home/lance/Build/wp-completion.bash
+
 PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH";
 PATH=$PATH:/usr/bin/node;
 PATH=$PATH:/usr/bin/npm;
@@ -255,5 +256,3 @@ PATH=$PATH:/root/.gem/ruby/2.1.0/bin;
 export GEM_HOME=$HOME/.gem/ruby/2.0.0;
 export EDITOR=/usr/bin/vim;
 export PATH;
-
-# . ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh

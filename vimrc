@@ -50,7 +50,7 @@ set smartcase		" case sensitive when uc present
 set wildmenu		" display wild menu instead of just completing it
 set wildmode=list:longest,full	" Command <Tab> completion, list matches, then longest common part, then all.
 set scrolljump=5	" Lines to scroll when cursor leaves screen
-set scrolloff=10   	" Minimum lines to keep above and below cursor
+set scrolloff=50   	" Minimum lines to keep above and below cursor
 set nowrap		    " set wrap for all files
 set number		    " set numbers
 set numberwidth=5   " we are good up to 99999 lines
@@ -96,9 +96,9 @@ inoremap <C-U> <C-G>u<C-U>
 " quickly get back to normal mode
 inoremap jk <ESC>
 
-" tread long lines as break lines (useful when moving around in them)
-nnoremap j gj
-nnoremap k gk
+" treat long lines as break lines (useful when moving around in them)
+" nnoremap j gj
+" nnoremap k gk
 
 " quickly get to beggining and end of line
 nnoremap H ^
@@ -181,6 +181,9 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 " setup syntax for wordpress?
 autocmd BufEnter *.php :set syn=wordpress
+
+" call wipeout on opening any file
+autocmd BufRead * :call Wipeout()
 
 """""""""""""""""""""""""""""""""""""""
 " GLOBAL MAPS

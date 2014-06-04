@@ -239,7 +239,15 @@ alias musica="ncmpcpp"
 alias grooveshark="spotify-to-mp3" #shorten spotify-to-mp3 command and remove hyphens
 
 # alias for betty
-alias betty="~/Build/betty/main.rb"
+alia  betty="~/Build/betty/main.rb"
+
+# Generator Stuff
+alias g:m="php artisan generate:model"
+alias g:c="php artisan generate:controller"
+alias g:v="php artisan generate:view"
+alias g:s="php artisan generate:seed"
+alias g:mig="php artisan generate:migration"
+alias g:r="php artisan generate:resource"
 
 # Source Files
 source /home/lance/Build/wp-completion.bash

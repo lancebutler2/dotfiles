@@ -8,8 +8,11 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'L9'
 Plugin 'tpope/vim-repeat'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
 
 " github
+Plugin 'garbas/vim-snipmate'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'bling/vim-airline'
 Plugin 'StanAngeloff/php.vim'

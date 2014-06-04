@@ -183,7 +183,7 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 autocmd BufEnter *.php :set syn=wordpress
 
 " call wipeout on opening any file
-autocmd BufRead * :call Wipeout()
+" autocmd BufReadPre,BufNewFile * :call Wipeout()
 
 """""""""""""""""""""""""""""""""""""""
 " GLOBAL MAPS
@@ -198,8 +198,8 @@ let g:airline_right_sep=''
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<C-e>"
-let g:UltiSnipsJumpForwardTrigger="<C-b>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+let g:UltiSnipsJumpForwardTrigger="<C-i>"
+let g:UltiSnipsJumpBackwardTrigger="<C-u>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"

@@ -239,7 +239,7 @@ alias musica="ncmpcpp"
 alias grooveshark="spotify-to-mp3" #shorten spotify-to-mp3 command and remove hyphens
 
 # alias for betty
-alia  betty="~/Build/betty/main.rb"
+alias  betty="~/Build/betty/main.rb"
 
 # Generator Stuff
 alias g:m="php artisan generate:model"

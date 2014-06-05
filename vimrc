@@ -169,6 +169,7 @@ nnoremap <leader>rn :set rnu!<cr>
 
 " toggle NerdTree
 nnoremap <silent><F5> :NERDTreeToggle<cr>
+nnoremap <leader>nt :NERDTreeToggle<cr>
 
 " Wordpress Codex Search
 nnoremap <leader>co :Wcodexsearch<CR>

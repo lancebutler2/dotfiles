@@ -67,7 +67,7 @@ set backup		            " keep a backup file
 set backupdir=~/.vim/backup " backup dir
 set directory=~/.vim/tmp    " directory?
 set autoindent		        " autoindent next line to match above one
-set copyindent              " copy the previous indentation on autoindenting
+"set copyindent              " copy the previous indentation on autoindenting
 set tabpagemax=15	        " change tabpagemax
 set nolist		            " start out by setting nolist, do not show special tab/space characters, etc
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.	" Highlight problematic whitespace
@@ -196,19 +196,22 @@ autocmd BufEnter *.php :set syn=wordpress
 let g:fuf_maxMenuWidth=950
 let g:airline#extensions#tabline#enabled=1
 let g:Powerline_symbols = 'fancy'
-let g:user_emmet_leader_key= '<C-y>'
+let g:user_emmet_leader_key= '<C-e>'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
-" let g:UltiSnipsExpandTrigger="<C-e>"
-let g:UltiSnipsExpandTrigger="<leader>e"
+let g:UltiSnipsExpandTrigger="<silent><C-e>"
 let g:UltiSnipsJumpForwardTrigger="<C-i>"
 let g:UltiSnipsJumpBackwardTrigger="<C-u>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" change youtcompletemedefaults
+let g:ycm_key_list_select_completion = ['<C-n>', '<Enter>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<S-Enter>', '<Up>']
 
 " PHP.vim
 " g:php_syntax_extensions_enabled

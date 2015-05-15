@@ -14,3 +14,6 @@ alias gpproduction='git push production production'
 alias gchm='git checkout master'
 alias gchs='git checkout staging'
 alias gchp='git checkout production'
+
+# Composer
+alias compda='composer dumpautoload -o'

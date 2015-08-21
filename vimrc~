@@ -6,9 +6,8 @@ set nocompatible    " disable vi-compatibility
 "if filereadable(expand("~/.vimrc.bundles"))
 "    source ~/.vimrc.bundles
 "endif
-"
 
-syntax on
+syntax enable
 filetype plugin indent on
 
 """""""""""""""""""""""""""""
@@ -21,6 +20,7 @@ endif
 """""""""""""""""""""""""""""""""""
 " OPTIONS
 """""""""""""""""""""""""""""""""""
+colorscheme candyman
 set background=dark     " dark background
 set encoding=utf-8      " necessary to show unicode glyphs
 
@@ -193,12 +193,12 @@ autocmd BufEnter *.php :set syn=wordpress
 """""""""""""""""""""""""""""""""""""""
 " GLOBAL MAPS
 """""""""""""""""""""""""""""""""""""""
-"let g:fuf_maxMenuWidth=950
-"let g:airline#extensions#tabline#enabled=1
-"let g:Powerline_symbols = 'fancy'
-"let g:user_emmet_leader_key= '<C-e>'
-"let g:airline_left_sep=''
-"let g:airline_right_sep=''
+let g:fuf_maxMenuWidth=950
+let g:airline#extensions#tabline#enabled=1
+let g:Powerline_symbols = 'fancy'
+let g:user_emmet_leader_key= '<C-e>'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
@@ -216,4 +216,3 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<S-Enter>', '<Up>']
 " PHP.vim
 " g:php_syntax_extensions_enabled
 " b:php_syntax_extensions_enabled
-colo candyman

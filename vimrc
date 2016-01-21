@@ -3,10 +3,10 @@ set nocompatible    " disable vi-compatibility
 """""""""""""""""""""""""""""
 " VUNDLE
 """""""""""""""""""""""""""""
-"if filereadable(expand("~/.vimrc.bundles"))
-"    source ~/.vimrc.bundles
-"endif
-"
+if filereadable(expand("~/.vimrc.bundles"))
+    source ~/.vimrc.bundles
+endif
+
 
 syntax on
 filetype plugin indent on

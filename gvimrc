@@ -5,5 +5,6 @@ set columns=120
 set background=dark
 colorscheme=candyman
 set guioptions=maxvert,maxhorz
+set showmode
 
 

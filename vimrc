@@ -52,12 +52,16 @@ set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
-hi cursorline cterm=none term=none
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
-highlight CursorLine guibg=#303000 ctermbg=234
 if has('mouse')
   set mouse=a
+endif
+
+set encoding=utf-8      " necessary to show unicode glyphs
+
+set t_Co=256		" give me colors!
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^linux'
+    set t_Co=16
 endif
 
 if &t_Co >= 256 || has("gui_running")
@@ -69,7 +73,6 @@ if &t_Co > 2 || has("gui_running")
 	" switch syntax highlighting on, when the terminal has colors
 	syntax on
 endif
-
 
 " Open MacVim in fullscreen mode
 if has("gui_macvim")
@@ -97,7 +100,6 @@ map <Down> gj
 map <Up> gk
 nnoremap j gj
 nnoremap k gk
-
 
 " switch tabs quickly with Shift-J/Shift-K
 nnoremap J gT
@@ -128,6 +130,9 @@ map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
+
+" set current directory to open file's directory
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " NERDTree
 nmap <leader>b :NERDTreeToggle<CR>

@@ -8,6 +8,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'jwalton512/vim-blade'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end() " required
 filetype plugin indent on " required

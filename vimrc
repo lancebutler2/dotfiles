@@ -105,6 +105,10 @@ map <Up> gk
 nnoremap j gj
 nnoremap k gk
 
+" ***speak some shortcuts
+" find in sidebar
+nmap <silent><leader><leader>fis :NERDTreeFind<cr>
+
 " switch tabs quickly with Shift-J/Shift-K
 nnoremap J gT
 nnoremap K gt
@@ -138,6 +142,8 @@ map <leader>s? z=
 " set current directory to open file's directory
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
+nmap <leader>c$ :NERDComEOLComment
+
 " NERDTree
 nmap <leader>b :NERDTreeToggle<CR>
 let NERDTreeHighlightCursorline=1
@@ -154,8 +160,9 @@ let g:syntastic_check_on_wq = 0
 
 " CtrlP
 nnoremap <silent> t :CtrlP<cr>
+nnoremap <silent> <leader>p :CtrlP<cr>
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_by_filename = 1
-let g:ctrlp_max_files = 600
+let g:ctrlp_max_files = 1500
 let g:ctrlp_max_depth = 5
 

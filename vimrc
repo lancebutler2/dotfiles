@@ -12,6 +12,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'jwalton512/vim-blade'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'vim-airline/vim-airline'
 
 call vundle#end() " required
 filetype plugin indent on " required
@@ -138,6 +139,7 @@ map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
+map <leader>H :noh<cr>
 
 " set current directory to open file's directory
 map <leader>cd :cd %:p:h<cr>:pwd<cr>

@@ -1,0 +1,35 @@
+# Utility
+alias cls='clear'
+alias :q='exit'
+
+# LS commands
+alias ll='ls -lF'
+alias ls='ls -F'
+alias la='ls -a1'
+alias vm='homestead ssh'
+
+# Git
+alias gl='git log --oneline --graph'
+alias gst='git status'
+alias gstatus='git status'
+alias gmmaster='git merge master'
+alias gpstaging='git push staging staging'
+alias gpproduction='git push production production'
+alias gchmaster='git checkout master'
+alias gchstaging='git checkout staging'
+alias gchproduction='git checkout production'
+alias gyolo='gchstaging && gmmaster && gpstaging && gchproduction && gmmaster && gpproduction && gchmaster'
+alias gnah='get reset --hard;git clean -df;'
+
+# Composer
+alias compda='composer dumpautoload -o'
+
+# Envoy
+alias epdeploy='envoy run post_deploy'
+
+# Linode
+alias sshlinode='ssh -p 32422 webuser@specialneedscertified.com'
+alias morethanoridnaryplugins='rsync -azP webuser@specialneedscertified.com:/var/www/production_morethanordinary.com/public_html/wp-content/plugins/ .'
+
+# Misc
+alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy && echo 'Copied to clipboard.'"

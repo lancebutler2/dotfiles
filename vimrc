@@ -114,6 +114,8 @@ nmap <silent><leader><leader>fis :NERDTreeFind<cr>
 nnoremap J gT
 nnoremap K gt
 
+nnoremap <silent>; :
+
 " quickly switch windows
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
@@ -124,7 +126,7 @@ nnoremap <leader>l <C-w>l
 nnoremap <silent> <F6> :set number!<cr>
 
 " quickly edit/source vim file
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>ed :tabedit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " quickly move lines up/down (awesome)
@@ -139,7 +141,7 @@ map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
-map <leader>H :noh<cr>
+map <leader><space> :nohlsearch<cr>
 
 " set current directory to open file's directory
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
@@ -168,3 +170,11 @@ let g:ctrlp_by_filename = 1
 let g:ctrlp_max_files = 1500
 let g:ctrlp_max_depth = 5
 
+"------------Auto-commands--------------"
+
+"Automatically source vimrc on save
+
+augroup autosourcing
+	autocmd!
+	autocmd BufWritePost .vimrc source %
+augroup END

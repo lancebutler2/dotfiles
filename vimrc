@@ -4,8 +4,9 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+"-------------------------------------------------"
+"-----------VUNDLE PLUGINS-----------------"
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'Valloric/YouCompleteMe'
@@ -13,32 +14,35 @@ Plugin 'jwalton512/vim-blade'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end() " required
 filetype plugin indent on " required
 
-let mapleader=","
 
+"-------------------------------------------------"
+"-----------SETTINGS-----------------"
+let mapleader=","
 set showmode		" always show mode
 set laststatus=2	" always show status line
 set tabstop=4		" a tab is four spaces
 set nowrap			" don't wrap lines
 set backspace=indent,eol,start		"allow backspacing over everything in insert mode
-set autoindent		" alwys set autoindenting on
-set copyindent		" copy the previous indentation on autoindenting
+set autoindent		" always set auto-indenting on
+set copyindent		" copy the previous indentation on auto-indenting
 set number			" always show line numbers
 set numberwidth=5	" we're good up to 99999 lines
-set shiftwidth=4	" number of spaes to use for autoindenting is four spaces
-set shiftround		" use multiple of shiftwidth when indenting with '<' and '>'
+set shiftwidth=4	" number of spaces to use for auto-indenting is four spaces
+set shiftround		" use multiple of shift width when indenting with '<' and '>'
 set showmatch		" show matching parenthesis
 set ignorecase		" ignore case when searching
 set smartcase		" ignore case if search patter is all lowercase, case-sensitive otherwise
-set smarttab		" insert tabs on the start of a line according to shiftwidth, not tabstop
+set smarttab		" insert tabs on the start of a line according to shift width, not tabstop
 set hlsearch		" highlight search terms
 set incsearch		" show search matches as you type
 set wrapscan		" wrap searches and end of scan
 set history=1000	" remember more commands and search history
-set undolevels=1000	" use many muchos levels of undo
+set undolevels=1000	" use many levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title			" change the terminal's title
 set visualbell		" don't beep
@@ -64,6 +68,7 @@ endif
 set encoding=utf-8      " necessary to show unicode glyphs
 
 set t_Co=256		" give me colors!
+
 " Allow color schemes to do bright colors without forcing bold.
 if &t_Co == 8 && $TERM !~# '^linux'
     set t_Co=16
@@ -90,52 +95,50 @@ if has("gui_running")
 	set linespace=6
 endif
 
-"""""""""""""""""""""""""""""
-" CONVENIENCE FUNCTIONS
-"""""""""""""""""""""""""""""
+
+"-------------------------------------------------"
+"-----------CONVENIENCE FUNCTIONS-----------------"
 if filereadable(expand("~/.vimrc.convenience"))
     source ~/.vimrc.convenience
 endif
 
+
+"------------------------------------"
+"-----------MAPPINGS-----------------"
+
+"-----------Movement-----------------"
 imap jk <ESC>
 nmap H ^
 nmap L $
-
 map <Down> gj
 map <Up> gk
 nnoremap j gj
 nnoremap k gk
 
-" ***speak some shortcuts
-" find in sidebar
-nmap <silent><leader><leader>fis :NERDTreeFind<cr>
-
-" switch tabs quickly with Shift-J/Shift-K
+"-----------Windows and Tabs-----------------"
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
+nmap <leader>tn :tabn<cr>
+nmap <leader>tp :tabp<cr>
 nnoremap J gT
 nnoremap K gt
 
-nnoremap <silent>; :
-
-" quickly switch windows
-nnoremap <leader>h <C-w>h
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k <C-w>k
-nnoremap <leader>l <C-w>l
-
-"toggle numbers!
-nnoremap <silent> <F6> :set number!<cr>
-
-" quickly edit/source vim file
-nnoremap <leader>ed :tabedit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" quickly move lines up/down (awesome)
+"-----------Utility-----------------"
+nmap <silent>; :
+nmap <silent> <F6> :set number!<cr>
+nmap <leader>cd :cd %:p:h<cr>:pwd<cr>
 nmap <C-j> mz:m+<cr>`z
 nmap <C-k> mz:m-2<cr>`z
 vmap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
-" spell checking toggle
+"-----------Vim File Editing-----------------"
+nnoremap <leader>ev :tabedit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+"-----------Spellchecking-----------------"
 map <leader>ss :setlocal spell!<cr>
 map <leader>sn ]s
 map <leader>sp [s
@@ -143,37 +146,40 @@ map <leader>sa zg
 map <leader>s? z=
 map <leader><space> :nohlsearch<cr>
 
-" set current directory to open file's directory
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-nmap <leader>c$ :NERDComEOLComment
-
-" NERDTree
-nmap <leader>b :NERDTreeToggle<CR>
+"------------------------------------"
+"-----------NERDTREE-----------------"
 let NERDTreeHighlightCursorline=1
+nmap <leader>b :NERDTreeToggle<CR>
+nmap <silent><leader><leader>fis :NERDTreeFind<cr>
 
-" Syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
 
+"--------------------------------------"
+"-----------SYNSTASTIC-----------------"
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" CtrlP
-nnoremap <silent> t :CtrlP<cr>
-nnoremap <silent> <leader>p :CtrlP<cr>
-let g:ctrlp_working_path_mode = 2
+
+"---------------------------------"
+"-----------CTRLP-----------------"
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_by_filename = 1
 let g:ctrlp_max_files = 1500
 let g:ctrlp_max_depth = 5
+let g:ctrlp_match_window_reversed = 2
+let g:ctrlp_max_height = 99 
+let g:ctrlp_min_height = 99 
+let g:ctrlp_jump_to_buffer = 2
+let g:ctrlp_match_window_bottom = 1
+nmap <leader>p :CtrlP<cr>
+nmap <leader>e :CtrlPMRUFiles<cr>
 
+
+"---------------------------------------"
 "------------Auto-commands--------------"
-
 "Automatically source vimrc on save
-
 augroup autosourcing
 	autocmd!
 	autocmd BufWritePost .vimrc source %

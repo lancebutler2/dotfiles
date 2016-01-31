@@ -13,8 +13,10 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'jwalton512/vim-blade'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'vim-airline/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'ivalkeen/vim-ctrlp-tjump'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end() " required
 filetype plugin indent on " required
@@ -48,7 +50,7 @@ set title			" change the terminal's title
 set visualbell		" don't beep
 set noerrorbells	" don't beep
 set confirm			" raise dialog asking to save if needed
-set scrolloff=50	" number of lines above and below cursors
+set scrolloff=3		" number of lines above and below cursors
 set showcmd			" show command in corner as written
 set wildmenu		" show list of matches above command line when invoking completion
 set nocursorline
@@ -107,7 +109,7 @@ endif
 "-----------MAPPINGS-----------------"
 
 "-----------Movement-----------------"
-imap jk <ESC>
+inoremap jk <ESC>
 nmap H ^
 nmap L $
 map <Down> gj
@@ -165,16 +167,28 @@ let g:syntastic_check_on_wq = 0
 "---------------------------------"
 "-----------CTRLP-----------------"
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_by_filename = 1
-let g:ctrlp_max_files = 1500
-let g:ctrlp_max_depth = 5
-let g:ctrlp_match_window_reversed = 2
-let g:ctrlp_max_height = 99 
-let g:ctrlp_min_height = 99 
+let g:ctrlp_max_files = 500
+let g:ctrlp_max_depth = 40
+let g:ctrlp_match_window = 'top,order:ttb,min:999,max:999,results:999'
 let g:ctrlp_jump_to_buffer = 2
-let g:ctrlp_match_window_bottom = 1
+let g:ctrlp_highlight_match = [1, 'Identifier']
+let g:ctrlp_switch_buffer = 'Et'
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_funky_syntax_highlight = 1
 nmap <leader>p :CtrlP<cr>
 nmap <leader>e :CtrlPMRUFiles<cr>
+nmap <leader>r :CtrlPFunky<cr>
+nmap <leader>t :CtrlPtjump<cr>
+
+"---------------------------------------"
+"------------Airline--------------"
+
+"---------------------------------------"
+"------------Emmet--------------"
+let g:user_emmet_mode='a'		"enable in all modes
+nmap <leader>ee :Emmet<space>
 
 
 "---------------------------------------"

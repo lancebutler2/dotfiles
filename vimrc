@@ -59,10 +59,13 @@ set nobackup
 set noswapfile
 set autoread
 set autowrite
+set splitbelow
+set splitright
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
+set guioptions-=e
 if has('mouse')
   set mouse=a
 endif
@@ -84,12 +87,6 @@ endif
 if &t_Co > 2 || has("gui_running")
 	" switch syntax highlighting on, when the terminal has colors
 	syntax on
-endif
-
-" Open MacVim in fullscreen mode
-if has("gui_macvim")
-    set guioptions=maxvert,maxhorz
-    " au GUIEnter * set fullscreen
 endif
 
 if has("gui_running")

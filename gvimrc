@@ -1,4 +1,4 @@
-set guifont=Source\ Code\ Pro:h18
+set guifont=Source_Code_Pro:h18
 set linespace=16
 set lines=60
 set columns=120

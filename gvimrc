@@ -3,6 +3,6 @@ set linespace=16
 set lines=60
 set columns=120
 set background=dark
-colorscheme candyman
+colorscheme atom-dark
 set guioptions=maxvert,maxhorz
 set showmode

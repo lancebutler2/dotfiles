@@ -78,7 +78,7 @@ endif
 
 if &t_Co >= 256 || has("gui_running")
 	set background=dark
-	colorscheme candyman
+	colorscheme atom-dark-256
 endif
 
 if &t_Co > 2 || has("gui_running")

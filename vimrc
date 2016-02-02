@@ -1,6 +1,6 @@
 set nocompatible						" do not use vi settings if applicable
 
-so ~/.vim_plugins.vim						" load plugins using Vundle
+so ~/.vim_plugins.vim					" load plugins using Vundle
 
 "-------------------------------------------------"
 "-----------SETTINGS-----------------"

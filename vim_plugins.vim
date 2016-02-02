@@ -1,7 +1,7 @@
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=~/.vim/bundle/Vundle.vim		" add vundle to the run-time path
+call vundle#begin()						" tell vundle to do its thing
 
 "-------------------------------------------------"
 "-----------VUNDLE PLUGINS-----------------"
@@ -18,5 +18,5 @@ Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 
-call vundle#end() " required
-filetype plugin indent on " required
+call vundle#end() 						" thanks for doing your thing vundle!
+filetype plugin indent on 				" plugin indent on

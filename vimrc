@@ -1,105 +1,71 @@
-set nocompatible
-filetype off
+set nocompatible						" do not use vi settings if applicable
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-"-------------------------------------------------"
-"-----------VUNDLE PLUGINS-----------------"
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'jwalton512/vim-blade'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'ivalkeen/vim-ctrlp-tjump'
-Plugin 'mattn/emmet-vim'
-
-call vundle#end() " required
-filetype plugin indent on " required
-
+so ~/.vim_plugins.vim						" load plugins using Vundle
 
 "-------------------------------------------------"
 "-----------SETTINGS-----------------"
 let mapleader=","
-set showmode		" always show mode
-set laststatus=2	" always show status line
-set tabstop=4		" a tab is four spaces
-set nowrap			" don't wrap lines
-set backspace=indent,eol,start		"allow backspacing over everything in insert mode
-set autoindent		" always set auto-indenting on
-set copyindent		" copy the previous indentation on auto-indenting
-set number			" always show line numbers
-set numberwidth=5	" we're good up to 99999 lines
-set shiftwidth=4	" number of spaces to use for auto-indenting is four spaces
-set shiftround		" use multiple of shift width when indenting with '<' and '>'
-set showmatch		" show matching parenthesis
-set ignorecase		" ignore case when searching
-set smartcase		" ignore case if search patter is all lowercase, case-sensitive otherwise
-set smarttab		" insert tabs on the start of a line according to shift width, not tabstop
-set hlsearch		" highlight search terms
-set incsearch		" show search matches as you type
-set wrapscan		" wrap searches and end of scan
-set history=1000	" remember more commands and search history
-set undolevels=1000	" use many levels of undo
+syntax on								" switch syntax highlighting on
+set showmode							" always show mode
+set laststatus=2						" always show status line
+set tabstop=4							" a tab is four spaces
+set nowrap								" don't wrap lines
+set backspace=indent,eol,start			"allow backspacing over everything in insert mode
+set autoindent							" always set auto-indenting on
+set copyindent							" copy the previous indentation on auto-indenting
+set number								" always show line numbers
+set numberwidth=5						" we're good up to 99999 lines
+set shiftwidth=4						" number of spaces to use for auto-indenting is four spaces
+set shiftround							" use multiple of shift width when indenting with '<' and '>'
+set showmatch							" show matching parenthesis
+set ignorecase							" ignore case when searching
+set smartcase							" ignore case if search patter is all lowercase, case-sensitive otherwise
+set smarttab							" insert tabs on the start of a line according to shift width, not tabstop
+set hlsearch							" highlight search terms
+set incsearch							" show search matches as you type
+set wrapscan							" wrap searches and end of scan
+set history=1000						" remember more commands and search history
+set undolevels=1000						" use many levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
-set title			" change the terminal's title
-set visualbell		" don't beep
-set noerrorbells	" don't beep
-set confirm			" raise dialog asking to save if needed
-set scrolloff=3		" number of lines above and below cursors
-set showcmd			" show command in corner as written
-set wildmenu		" show list of matches above command line when invoking completion
-set nocursorline
-set pastetoggle=<F2>
-set nobackup
-set noswapfile
-set autoread
-set autowrite
-set splitbelow
-set splitright
-set guioptions-=r
-set guioptions-=R
-set guioptions-=l
-set guioptions-=L
-set guioptions-=e
-if has('mouse')
-  set mouse=a
-endif
+set title								" change the terminal's title
+set visualbell							" don't beep
+set noerrorbells						" don't beep
+set confirm								" raise dialog asking to save if needed
+set scrolloff=3							" number of lines above and below cursors
+set showcmd								" show command in corner as written
+set wildmenu							" show list of matches above command line when invoking completion
+set nocursorline						" hide line highlighting that cursor is on
+set pastetoggle=<F2>					" toggle to paste in large blocks of code
+set nobackup							" backups? we don't need no stinkin backups! git!
+set noswapfile							" no swap files either
+set autoread							" if an external change occurs, read it
+set noautowrite							" if we lose focus, do not save
+set splitbelow							" better split position
+set splitright							" better split position
+set encoding=utf-8      				" necessary to show unicode glyphs
+set t_Co=256							" give me colors!
 
-set encoding=utf-8      " necessary to show unicode glyphs
-
-set t_Co=256		" give me colors!
-
-" Allow color schemes to do bright colors without forcing bold.
 if &t_Co == 8 && $TERM !~# '^linux'
-    set t_Co=16
+    set t_Co=16		" Allow color schemes to do bright colors without forcing bold.
 endif
 
 if &t_Co >= 256 || has("gui_running")
-	set background=dark
+	set background=dark		" non=dark backgrounds hurt my eyes
 	colorscheme atom-dark-256
 endif
 
-if &t_Co > 2 || has("gui_running")
-	" switch syntax highlighting on, when the terminal has colors
-	syntax on
-endif
 
-if has("gui_running")
-	set guifont=Source\ Code\ Pro:h18
-	set linespace=6
-endif
+
 
 
 "-------------------------------------------------"
-"-----------CONVENIENCE FUNCTIONS-----------------"
-if filereadable(expand("~/.vimrc.convenience"))
-    source ~/.vimrc.convenience
+"-----------FUNCTIONS-----------------"
+if filereadable(expand("~/.vim_functions.vim"))
+    source ~/.vim_functions.vim 	" add any custom vim functions 
 endif
+
+
+
 
 
 "------------------------------------"
@@ -114,6 +80,7 @@ map <Up> gk
 nnoremap j gj
 nnoremap k gk
 
+
 "-----------Windows and Tabs-----------------"
 nnoremap <leader>wh <C-w>h
 nnoremap <leader>wj <C-w>j
@@ -124,6 +91,7 @@ nmap <leader>tp :tabp<cr>
 nnoremap J gT
 nnoremap K gt
 
+
 "-----------Utility-----------------"
 nmap <silent>; :
 nmap <silent> <F6> :set number!<cr>
@@ -133,9 +101,11 @@ nmap <C-k> mz:m-2<cr>`z
 vmap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
+
 "-----------Vim File Editing-----------------"
 nnoremap <leader>ev :tabedit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
 
 "-----------Spellchecking-----------------"
 map <leader>ss :setlocal spell!<cr>
@@ -146,11 +116,17 @@ map <leader>s? z=
 map <leader><space> :nohlsearch<cr>
 
 
+
+
+
 "------------------------------------"
 "-----------NERDTREE-----------------"
 let NERDTreeHighlightCursorline=1
 nmap <leader>b :NERDTreeToggle<CR>
 nmap <silent><leader><leader>fis :NERDTreeFind<cr>
+
+
+
 
 
 "--------------------------------------"
@@ -159,6 +135,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+
+
 
 
 "---------------------------------"
@@ -179,13 +158,25 @@ nmap <leader>e :CtrlPMRUFiles<cr>
 nmap <leader>r :CtrlPFunky<cr>
 nmap <leader>t :CtrlPtjump<cr>
 
+
+
+
+
 "---------------------------------------"
 "------------Airline--------------"
+
+
+
+
+
 
 "---------------------------------------"
 "------------Emmet--------------"
 let g:user_emmet_mode='a'		"enable in all modes
 nmap <leader>ee :Emmet<space>
+
+
+
 
 
 "---------------------------------------"

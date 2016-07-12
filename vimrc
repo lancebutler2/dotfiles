@@ -2,15 +2,20 @@ set nocompatible						" do not use vi settings if applicable
 
 so ~/.vim_plugins.vim					" load plugins using Vundle
 
+syntax enable
+set background=dark
+colorscheme material-theme
+
 "-------------------------------------------------"
 "-----------SETTINGS-----------------"
 let mapleader=","
-syntax on								" switch syntax highlighting on
+set macligatures						" fancy arrows and stuff when available
 set showmode							" always show mode
 set laststatus=2						" always show status line
 set tabstop=4							" a tab is four spaces
+set expandtab							" insert space characters whenever the tab key is pressed
 set nowrap								" don't wrap lines
-set backspace=indent,eol,start			"allow backspacing over everything in insert mode
+set backspace=indent,eol,start			" allow backspacing over everything in insert mode
 set autoindent							" always set auto-indenting on
 set copyindent							" copy the previous indentation on auto-indenting
 set number								" always show line numbers
@@ -30,7 +35,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set title								" change the terminal's title
 set visualbell							" don't beep
 set noerrorbells						" don't beep
-set confirm								" raise dialog asking to save if needed
+set noconfirm							" raise dialog asking to save if needed
 set scrolloff=3							" number of lines above and below cursors
 set showcmd								" show command in corner as written
 set wildmenu							" show list of matches above command line when invoking completion
@@ -39,19 +44,24 @@ set pastetoggle=<F2>					" toggle to paste in large blocks of code
 set nobackup							" backups? we don't need no stinkin backups! git!
 set noswapfile							" no swap files either
 set autoread							" if an external change occurs, read it
-set noautowrite							" if we lose focus, do not save
+set autowriteall						" if we lose focus, go ahead and save
 set splitbelow							" better split position
 set splitright							" better split position
 set encoding=utf-8      				" necessary to show unicode glyphs
 set t_Co=256							" give me colors!
+set complete=.,w,b,u                    " set autocomplete to current buffer, other windows, buffers, and unloaded buffers
+set completeopt=longest,menuone
+
+" Border colors and padding
+hi LineNr guibg=bg
+hi foldcolumn guibg=bg
+set foldcolumn=1
+
+" Clean split borders
+hi vertsplit guifg=bg guibg=bg
 
 if &t_Co == 8 && $TERM !~# '^linux'
     set t_Co=16		" Allow color schemes to do bright colors without forcing bold.
-endif
-
-if &t_Co >= 256 || has("gui_running")
-	set background=dark		" non=dark backgrounds hurt my eyes
-	colorscheme atom-dark-256
 endif
 
 
@@ -90,21 +100,27 @@ nmap <leader>tn :tabn<cr>
 nmap <leader>tp :tabp<cr>
 nnoremap J gT
 nnoremap K gt
-
+nmap <c-h> :vertical resize +5<cr>
+nmap <c-l> :vertical resize -5<cr>
 
 "-----------Utility-----------------"
+nmap <leader>q :bd<cr>
 nmap <silent>; :
 nmap <silent> <F6> :set number!<cr>
+nmap <leader><leader>trn :set relativenumber!<cr>
 nmap <leader>cd :cd %:p:h<cr>:pwd<cr>
 nmap <C-j> mz:m+<cr>`z
 nmap <C-k> mz:m-2<cr>`z
 vmap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
+nmap <leader><leader>tn :set number!<cr>
+nnoremap <leader><leader>tw :set wrap!<cr>
 
 
 "-----------Vim File Editing-----------------"
-nnoremap <leader>ev :tabedit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader><leader>ev :tabedit $MYVIMRC<cr>
+nnoremap <leader><leader>sv :source $MYVIMRC<cr>
+nnoremap <leader><leader>es :e ~/.vim/snippets/
 
 
 "-----------Spellchecking-----------------"
@@ -121,9 +137,10 @@ map <leader><space> :nohlsearch<cr>
 
 "------------------------------------"
 "-----------NERDTREE-----------------"
-let NERDTreeHighlightCursorline=1
+let NERDTreeHijackNetrw = 0
+let NERDTreeHighlightCursorline = 1
 nmap <leader>b :NERDTreeToggle<CR>
-nmap <silent><leader><leader>fis :NERDTreeFind<cr>
+nmap <leader><leader>fib :NERDTreeFind<cr>
 
 
 
@@ -134,7 +151,7 @@ nmap <silent><leader><leader>fis :NERDTreeFind<cr>
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs=1
 
 
 
@@ -143,20 +160,18 @@ let g:syntastic_check_on_wq = 0
 "---------------------------------"
 "-----------CTRLP-----------------"
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_by_filename = 1
-let g:ctrlp_max_files = 500
-let g:ctrlp_max_depth = 40
-let g:ctrlp_match_window = 'top,order:ttb,min:999,max:999,results:999'
+let g:ctrlp_match_window = 'top,order:ttb,min:50,max:50,results:30'
 let g:ctrlp_jump_to_buffer = 2
 let g:ctrlp_highlight_match = [1, 'Identifier']
-let g:ctrlp_switch_buffer = 'Et'
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_funky_syntax_highlight = 1
 nmap <leader>p :CtrlP<cr>
+nnoremap <D-p> :CtrlP<cr>
 nmap <leader>e :CtrlPMRUFiles<cr>
-nmap <leader>r :CtrlPFunky<cr>
+nmap <D-e> :CtrlPMRUFiles<cr>
+nmap <Leader>r :CtrlPBufTag<cr>
+nmap <D-e> :CtrlPBufTag<cr>
 nmap <leader>t :CtrlPtjump<cr>
+nmap <D-t> :CtrlPtjump<cr>
 
 
 
@@ -169,11 +184,37 @@ nmap <leader>t :CtrlPtjump<cr>
 
 
 
-
 "---------------------------------------"
 "------------Emmet--------------"
 let g:user_emmet_mode='a'		"enable in all modes
 nmap <leader>ee :Emmet<space>
+
+
+
+
+
+
+"---------------------------------------"
+"------------PHP Complete--------------"
+"let g:phpcomplete_index_composer_command='composer'
+
+
+
+
+
+"---------------------------------------"
+"------------ZoomWin--------------"
+nmap <silent> <leader>wo :ZoomWin<cr>
+
+
+
+
+
+"---------------------------------------"
+"------------Greplace.vim--------------"
+set grepprg=ag
+
+let g:grep_cmd_opts = '--line-numbers --noheading'
 
 
 

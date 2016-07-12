@@ -1,9 +1,14 @@
-source ~/antigen/antigen.zsh
+source /Users/lance/antigen/antigen.zsh
 source ~/.zsh_profile
 source ~/.zsh_aliases
 
 # load the oh-my-zsh's library.
 antigen use oh-my-zsh
+
+antigen theme robbyrussell
+
+# Load the theme
+#antigen theme robbyrussell
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh)
 antigen bundle git
@@ -49,12 +54,12 @@ function _zsh_title__preexec() {
   update_title "$cmd" "%20<...<%~"
 }
 
-autoload -Uz add-zsh-hook
-add-zsh-hook precmd _zsh_title__precmd
-add-zsh-hook preexec _zsh_title__preexec
-
-# Load the theme
-antigen theme robbyrussell
+#autoload -Uz add-zsh-hook
+#add-zsh-hook precmd _zsh_title__precmd
+#add-zsh-hook preexec _zsh_title__preexec
 
 # Tell antigen that you're done.
 antigen apply
+
+SAVEHIST=0
+HISTFILE=~/.zsh_history

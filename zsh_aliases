@@ -4,12 +4,13 @@ alias ssh:lancebutler.us='ssh forge@lancebutler.us'
 alias morethanoridnaryplugins='rsync -azP webuser@specialneedscertified.com:/var/www/production_morethanordinary.com/public_html/wp-content/plugins/ .'
 
 # Laravel
-alias artisan='php artisan'
-alias a='php artisan'
+alias art='php artisan'
+alias tinker='php artisan tinker'
 
 # Utility
 alias cls='clear'
 alias :q='exit'
+alias ripsong='youtube-dl -x --audio-format=mp3'
 
 # LS commands
 alias ll='ls -lF'

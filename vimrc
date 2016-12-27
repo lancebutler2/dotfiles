@@ -9,7 +9,14 @@ colorscheme material-theme
 "-------------------------------------------------"
 "-----------SETTINGS-----------------"
 let mapleader=","
-set macligatures						" fancy arrows and stuff when available
+
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin"
+    set macligatures  "fancy arrows and stuff
+  endif
+endif
+
 set showmode							" always show mode
 set laststatus=2						" always show status line
 set tabstop=4							" a tab is four spaces

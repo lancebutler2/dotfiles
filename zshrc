@@ -1,4 +1,4 @@
-source /Users/lance/antigen/antigen.zsh
+source ~/antigen.zsh
 source ~/.zsh_profile
 source ~/.zsh_aliases
 

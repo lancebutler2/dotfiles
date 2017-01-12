@@ -4,7 +4,8 @@ so ~/.vim_plugins.vim					" load plugins using Vundle
 
 syntax enable
 set background=dark
-colorscheme material-theme
+colorscheme candyman
+set guifont=Ubuntu\ Mono\ 14
 
 "-------------------------------------------------"
 "-----------SETTINGS-----------------"
@@ -19,7 +20,7 @@ endif
 
 set showmode							" always show mode
 set laststatus=2						" always show status line
-set tabstop=4							" a tab is four spaces
+set tabstop=2							" a tab is two spaces
 set expandtab							" insert space characters whenever the tab key is pressed
 set nowrap								" don't wrap lines
 set backspace=indent,eol,start			" allow backspacing over everything in insert mode
@@ -27,11 +28,11 @@ set autoindent							" always set auto-indenting on
 set copyindent							" copy the previous indentation on auto-indenting
 set number								" always show line numbers
 set numberwidth=5						" we're good up to 99999 lines
-set shiftwidth=4						" number of spaces to use for auto-indenting is four spaces
+set shiftwidth=2						" number of spaces to use for auto-indenting is four spaces
 set shiftround							" use multiple of shift width when indenting with '<' and '>'
 set showmatch							" show matching parenthesis
 set ignorecase							" ignore case when searching
-set smartcase							" ignore case if search patter is all lowercase, case-sensitive otherwise
+set smartcase							" ignore case if search pattern is all lowercase, case-sensitive otherwise
 set smarttab							" insert tabs on the start of a line according to shift width, not tabstop
 set hlsearch							" highlight search terms
 set incsearch							" show search matches as you type
@@ -58,6 +59,7 @@ set encoding=utf-8      				" necessary to show unicode glyphs
 set t_Co=256							" give me colors!
 set complete=.,w,b,u                    " set autocomplete to current buffer, other windows, buffers, and unloaded buffers
 set completeopt=longest,menuone
+set t_vb=
 
 " Border colors and padding
 hi LineNr guibg=bg
@@ -148,6 +150,14 @@ let NERDTreeHijackNetrw = 0
 let NERDTreeHighlightCursorline = 1
 nmap <leader>b :NERDTreeToggle<CR>
 nmap <leader><leader>fib :NERDTreeFind<cr>
+
+
+
+
+
+"------------------------------------"
+"-----------TagBar-----------------"
+" nmap <leader><leader>b :TagbarToggle<cr>
 
 
 

@@ -2,6 +2,10 @@ source ~/antigen.zsh
 source ~/.zsh_profile
 source ~/.zsh_aliases
 
+if [[ -a ~/z.sh ]]; then
+  source ~/z.sh
+fi
+
 # load the oh-my-zsh's library.
 antigen use oh-my-zsh
 

@@ -33,6 +33,7 @@ Plugin 'vim-scripts/ZoomWin'
 Plugin 'rking/ag.vim'
 Plugin 'skwp/greplace.vim'
 Plugin 'jdkanani/vim-material-theme'
+Plugin 'godlygeek/tabular'
 
 
 call vundle#end() 						" thanks for doing your thing vundle!

@@ -1,4 +1,5 @@
 set nocompatible						" do not use vi settings if applicable
+filetype off
 
 so ~/.vim_plugins.vim					" load plugins using Vundle
 
@@ -118,8 +119,8 @@ nmap <silent>; :
 nmap <silent> <F6> :set number!<cr>
 nmap <leader><leader>trn :set relativenumber!<cr>
 nmap <leader>cd :cd %:p:h<cr>:pwd<cr>
-nmap <C-j> mz:m+<cr>`z
 nmap <C-k> mz:m-2<cr>`z
+nmap <C-j> mz:m+<cr>`z
 vmap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
 nmap <leader><leader>tn :set number!<cr>

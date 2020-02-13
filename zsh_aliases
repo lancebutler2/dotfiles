@@ -6,8 +6,14 @@ alias ssh:joe="sshpass -p 'vagrant' ssh vagrant@192.168.1.71"
 #alias ssh:lance="sshpass -p 'vagrant' ssh vagrant@192.168.1.122"
 alias ssh:randall="sshpass -p 'vagrant' ssh vagrant@192.168.1.123"
 alias ssh:chris="sshpass -p 'vagrant' ssh vagrant@192.168.1.150"
-alias ssh:lance="ssh -p 222 lbutler@192.168.1.95"
-alias mount:lance="sshfs -o Port=222 root@192.168.1.95:/ ~/mnt/vm"
+#alias ssh:lance="ssh -p 222 lbutler@192.168.1.95"
+alias ssh:lance="ssh -p222 lbutler@local.lbutler"
+alias ssh:web6="ssh -p222 lbutler@web-6.atl.internal"
+alias ssh:stage="ssh -p222 lbutler@stage.atl.internal"
+alias ssh:devtlgen="ssh -p222 lbutler@devtlgen.ofc.internal"
+alias ssh:qastream="ssh -p222 lbutler@qastream.oxblue.com"
+alias mount:oldvm="sshfs -o Port=222 root@192.168.1.95:/ ~/mnt/vm"
+alias mount:lance="sshfs -o nonempty -o Port=222 lbutler@local.lbutler:/ ~/mnt/vm"
 alias unmount:lance="sudo umount -l /home/lance/mnt/vm"
 
 
@@ -62,7 +68,3 @@ alias sshlinode='ssh -p 32422 webuser@specialneedscertified.com'
 
 # Misc
 alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy && echo 'Copied to clipboard.'"
-
-function homestead() {
-  ( cd ~/Homestead && vagrant $* )
-}

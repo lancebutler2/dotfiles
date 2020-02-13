@@ -12,13 +12,16 @@ alias unmount:lance="sudo umount -l /home/lance/mnt/vm"
 
 
 # SSH
-
 alias ssh:specialneedscertified.com='ssh -p 32422 webuser@specialneedscertified.com'
+alias mount:oxblue='sshfs -p222 lbutler@lbutler.oxofc.com:/ ~/Code/oxblue'
+alias unmount:oxblue='umount ~/Code/oxblue'
 alias ssh:lancebutler.us='ssh forge@lancebutler.us'
+#alias ssh:specialneedscertified.com='ssh -o nonempty -p 32422 webuser@specialneedscertified.com'
 alias morethanoridnaryplugins='rsync -azP webuser@specialneedscertified.com:/var/www/production_morethanordinary.com/public_html/wp-content/plugins/ .'
 
 # Laravel
 alias art='php artisan'
+alias a='php artisan'
 alias tinker='php artisan tinker'
 
 # Utility
@@ -28,9 +31,11 @@ alias ripsong='youtube-dl -x --audio-format=mp3'
 
 # LS commands
 alias ll='ls -lF'
-alias ls='ls -F'
+alias ls='ls -F --color=always'
 alias la='ls -a1'
 alias vm='homestead ssh'
+alias grep="grep --color=always"
+alias egrep="egrep --color=always"
 
 # Git
 alias g:ch='git checkout'
@@ -57,3 +62,7 @@ alias sshlinode='ssh -p 32422 webuser@specialneedscertified.com'
 
 # Misc
 alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy && echo 'Copied to clipboard.'"
+
+function homestead() {
+  ( cd ~/Homestead && vagrant $* )
+}

@@ -11,14 +11,11 @@ zplug 'dracula/zsh', as:theme
 
 # Supports oh-my-zsh plugins and the like
 zplug "plugins/git",   from:oh-my-zsh
-
 zplug "wting/autojump", as:plugin
-
 zplug "zdharma/fast-syntax-highlighting", as:plugin
-
 zplug "zsh-users/zsh-completions", as:plugin
-
 zplug "peterhurford/up.zsh", as:plugin
+zplug "agkozak/zsh-z", as:plugin
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
